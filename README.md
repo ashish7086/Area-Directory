@@ -1,10 +1,5 @@
 # Area Directory Mobile Application API Document
-
-<hr>
-
 # BASE URL ‑ https://arcbrain.in/mihu/
-
-<hr>
 
 ## Get Offers
 * ### Offers List
@@ -14,9 +9,11 @@
 <br>
 @Request Type : Post
 <br>
+@Response Data Type : Json
+<br>
 @Parameters
-  * **Limit** - Integer - (Maximum number of items to be returned in result set. Default is 10)
-  * **Page** - Integer - (Current page of the collection. Default is 0)<br>
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
 
 ### **Response**
@@ -78,6 +75,8 @@
 <br>
 @Request Type : Post
 <br>
+@Response Data Type : Json
+<br>
 @Parameters : Not Required
 
 ### **Response**
@@ -111,3 +110,195 @@
 
 ## Get Categories
 * ### Categories List
+### API URL : categories/categoryApi/get
+
+@Description : This API helps you to view all the categories.
+<br>
+@Request Type : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
+ > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **status** : Integer | Optional | (Get Enable Categories or Disable Categories. Default is 1 (Enable))
+  > **Options :** 1 for Enable and 0 for Disable
+  * **required_child** : Integer | Optional | (Get Categories in Parent - Child format send 1. Default is 0) 
+  * **parent_id** : Integer | Optional | (Get Child Categories of given parent_id.)
+  * **search_string** : string | Optional | (Get by category name.)
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<br>
+If required_child = 1
+<pre>
+{
+    "succ": true,
+    "public_msg": "Category Fetched Successfully.",
+    "res": {
+        "categories": [
+            {
+                "id": "2",
+                "cat_name": "Fitness",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0",
+                "child_category": []
+            },
+            {
+                "id": "3",
+                "cat_name": "Hotel",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0",
+                "child_category": [
+                    {
+                        "id": "5",
+                        "cat_name": "Hotel Sub Category",
+                        "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                        "parent_id": "3",
+                        "status": "1",
+                        "is_featured": "0",
+                        "child_category": []
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "cat_name": "Healthcare",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0",
+                "child_category": [
+                    {
+                        "id": "6",
+                        "cat_name": "Healthcare Sub Category",
+                        "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                        "parent_id": "4",
+                        "status": "1",
+                        "is_featured": "0",
+                        "child_category": []
+                    }
+                ]
+            }
+        ]
+    }
+}
+</pre>
+If required_child = 0
+<pre>
+{
+    "succ": true,
+    "public_msg": "Category Fetched Successfully.",
+    "res": {
+        "categories": [
+            {
+                "id": "1",
+                "cat_name": "Education",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0"
+            },
+            {
+                "id": "2",
+                "cat_name": "Fitness",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0"
+            },
+            {
+                "id": "3",
+                "cat_name": "Hotel",
+                "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                "parent_id": "0",
+                "status": "1",
+                "is_featured": "0"
+            }
+        ]
+    }
+}
+</pre>
+
+* ### Single Category
+ ### API URL : categories/categoryApi/get/<offer_id>
+        e.g. : categories/categoryApi/get/2
+ @Description : This API helps you to view single category.
+<br>
+@Request Type : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters 
+  * **required_child** - Integer | Optional | (Get Categories in Parent - Child format send 1. Default is 0)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+<br>
+If required_child = 1
+{
+    "succ": true,
+    "public_msg": "Category Fetched Successfully.",
+    "res": {
+        "categories": {
+            "id": "3",
+            "cat_name": "Hotel",
+            "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+            "parent_id": "0",
+            "status": "1",
+            "is_featured": "0",
+            "child_category": [
+                {
+                    "id": "5",
+                    "cat_name": "Hotel Sub Category",
+                    "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+                    "parent_id": "3",
+                    "status": "1",
+                    "is_featured": "0",
+                    "child_category": []
+                }
+            ]
+        }
+    }
+}
+</pre>
+
+If required_child = 0
+<pre>
+{
+    "succ": true,
+    "public_msg": "Category Fetched Successfully.",
+    "res": {
+        "categories": {
+            "id": "2",
+            "cat_name": "Fitness",
+            "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
+            "parent_id": "0",
+            "status": "1",
+            "is_featured": "0"
+        }
+    }
+}
+</pre>
