@@ -126,8 +126,9 @@
   > **Options :** 1 for Enable and 0 for Disable
   * **required_child** : Integer | Optional | (Get Categories in Parent - Child format send 1. Default is 0) 
   * **parent_id** : Integer | Optional | (Get Child Categories of given parent_id.)
-  * **search_string** : string | Optional | (Get by category name.)
-
+  * **search_string** : String | Optional | (Get by category name.)
+  * **required_featured** : Integer | Optional | (Get featured categories send 1.)
+  
 ### **Response**
  * Case : False
  <pre>
@@ -234,7 +235,7 @@ If required_child = 0
 </pre>
 
 * ### Single Category
- ### API URL : categories/categoryApi/get/<offer_id>
+ ### API URL : categories/categoryApi/get/<category_id>
         e.g. : categories/categoryApi/get/2
  @Description : This API helps you to view single category.
 <br>
@@ -262,7 +263,6 @@ If required_child = 1
     "succ": true,
     "public_msg": "Category Fetched Successfully.",
     "res": {
-        "categories": {
             "id": "3",
             "cat_name": "Hotel",
             "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
@@ -280,7 +280,6 @@ If required_child = 1
                     "child_category": []
                 }
             ]
-        }
     }
 }
 </pre>
@@ -291,14 +290,12 @@ If required_child = 0
     "succ": true,
     "public_msg": "Category Fetched Successfully.",
     "res": {
-        "categories": {
             "id": "2",
             "cat_name": "Fitness",
             "cat_image": "https://arcbrain.in/mihu/beagle_assets/img/categories/Group%202129.svg",
             "parent_id": "0",
             "status": "1",
             "is_featured": "0"
-        }
     }
 }
 </pre>
