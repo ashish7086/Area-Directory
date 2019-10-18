@@ -1,7 +1,13 @@
-# <center>Area Directory Mobile Application API Document</center>
+# Area Directory Mobile Application API Document
+
+<hr>
+
 # BASE URL ‑ https://arcbrain.in/mihu/
 
-* ## Get Offers
+<hr>
+
+## Get Offers
+* ### Offers List
 ### API URL : offers/offersApi/get
 
 @Description : This API helps you to view all the offers.
@@ -11,7 +17,7 @@
 @Parameters
   * **Limit** - Integer - (Maximum number of items to be returned in result set. Default is 10)
   * **Page** - Integer - (Current page of the collection. Default is 0)<br>
-  If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+ > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
 
 ### **Response**
  * Case : False
@@ -64,3 +70,44 @@
     }
 }
 </pre>
+
+ * ### Single Offer
+ ### API URL : offers/offersApi/get/<offer_id>
+        e.g. : offers/offersApi/get/2
+ @Description : This API helps you to view single offer.
+<br>
+@Request Type : Post
+<br>
+@Parameters : Not Required
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Offer fetched successfully.",
+    "res": {
+        "id": "2",
+        "image": "http://arcbrain.in/mihu/beagle_assets/img/offers/1.jpg",
+        "data": "{\"action\":\"category_page\",\"url\":\"\",\"id\":1}",
+        "offer_data": {
+            "action": "category_page",
+            "url": "",
+            "id": 1
+        }
+    }
+}
+</pre>
+
+<hr>
+
+## Get Categories
+* ### Categories List
