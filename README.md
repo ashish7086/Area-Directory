@@ -14,7 +14,14 @@
 @Parameters
   * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
   * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
- > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **status** : Integer | Optional | (Get Enable Offers or Disable Offers.Default Both)
+  > **Options :** 1 for Enable and 0 for Disable.
+  * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
+  * **order** : String | Optional | (Offers sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting Offers.)
+  > **Options :** sorting and id. Default is id.
 
 ### **Response**
  * Case : False
@@ -122,12 +129,16 @@
   * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
   * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
-  * **status** : Integer | Optional | (Get Enable Categories or Disable Categories. Default is 1 (Enable))
+  * **status** : Integer | Optional | (Get Enable Categories or Disable Categories. Default Both)
   > **Options :** 1 for Enable and 0 for Disable
   * **required_child** : Integer | Optional | (Get Categories in Parent - Child format send 1. Default is 0) 
   * **parent_id** : Integer | Optional | (Get Child Categories of given parent_id.)
   * **search_string** : String | Optional | (Get by category name.)
   * **required_featured** : Integer | Optional | (Get featured categories send 1.)
+  * **order** : String | Optional | (Category sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting categories.)
+  > **Options :** sorting,cat_name and id. Default is id.
   
 ### **Response**
  * Case : False
