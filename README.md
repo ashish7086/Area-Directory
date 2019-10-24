@@ -310,3 +310,321 @@ If required_child = 0
     }
 }
 </pre>
+
+## Get Shops
+* ### Shops List
+### API URL : shop/shopApi/get
+
+@Description : This API helps you to view all the shops.
+<br>
+@Request Type : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **latitude** : Float | Required | (Get Nearest shops.)
+  * **longitude** : Float | Required | (Get Nearest shops.)
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
+  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **status** : Integer | Optional | (Get Enable Shops or Disable Shops. Default Both)
+  > **Options :** 1 for Enable and 0 for Disable.
+  * **required_images** : Integer | Optional | (Get Images of Shops. Set value 1.)
+  * **image_type** : Integer | Optional  | (Get images by type.)
+  > **Options :** slider and gallery
+  * **required_facilties** : Integer | Optional | (Get Facilities of shops, Set Value 1.)
+  * **required_offers** : Integer | Optional | (Get Offers of shops. Set Value 1.)
+  * **required_categories** : Integer | Optional | (Get Categories of shops. St Value 1.)
+  * **required_reviews*** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
+  * **required_featured** : Integer | Optional | (Get Featured Shops. Set value 1.)
+  * **search_string** : String | Optional | (Get Shops by search.)
+  * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
+  * **order** : String | Optional | (Offers sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting Offers.)
+  > **Options :** shop_name and id. Default is id.
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Shop Fetched Successfully.",
+    "res": {
+        "shopes": [
+            {
+                "id": "1",
+                "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                "contact_no": "1234567890",
+                "whatsapp_no": "1234567890",
+                "video_url": "https://www.youtube.com/watch?reload=9&v=3J7vYWFaCoU",
+                "shop_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "timing": "10:30 Am - 07:30 Pm",
+                "home_service": "0",
+                "address": "114B 3rd Floor Sewak Park",
+                "pin_code": "110059",
+                "locality": "Dwarka Mor",
+                "city": "New Delhi",
+                "state_id": "963",
+                "country_id": "864",
+                "latitude": "28.58118100",
+                "longitude": "77.05088800",
+                "status": "1",
+                "is_featured": "0",
+                "add_user": "5",
+                "add_datetime": "2019-10-18 18:55:17",
+                "country": "India",
+                "state": "Delhi",
+                "images": {
+                    "gallery": [
+                        {
+                            "id": "3",
+                            "shop_id": "1",
+                            "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                            "type": "gallery"
+                        },
+                        {
+                            "id": "1",
+                            "shop_id": "1",
+                            "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                            "type": "gallery"
+                        }
+                    ],
+                    "slider": [
+                        {
+                            "id": "4",
+                            "shop_id": "1",
+                            "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                            "type": "slider"
+                        },
+                        {
+                            "id": "2",
+                            "shop_id": "1",
+                            "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                            "type": "slider"
+                        }
+                    ]
+                },
+                "facilities": [
+                    {
+                        "id": "4",
+                        "shop_id": "1",
+                        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    },
+                    {
+                        "id": "3",
+                        "shop_id": "1",
+                        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    },
+                    {
+                        "id": "2",
+                        "shop_id": "1",
+                        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    },
+                    {
+                        "id": "1",
+                        "shop_id": "1",
+                        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                    }
+                ],
+                "reviews": [
+                    {
+                        "id": "1",
+                        "shop_id": "1",
+                        "user_id": "5",
+                        "rating_stars": "2",
+                        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                        "add_datetime": "2019-10-23 17:36:32",
+                        "first_name": "Anup",
+                        "last_name": "kumar",
+                        "profile_pic": null
+                    }
+                ],
+                "categories": [
+                    {
+                        "cat_name": "Fitness",
+                        "id": "2"
+                    },
+                    {
+                        "cat_name": "Education",
+                        "id": "1"
+                    }
+                ],
+                "offers": [
+                    {
+                        "id": "1",
+                        "offer_title": "Upto 50% off on all tests",
+                        "offer_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                        "shop_id": "1",
+                        "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                        "contact_no": "1234567890",
+                        "whatsapp_no": "1234567890",
+                        "locality": "Dwarka Mor",
+                        "city": "New Delhi",
+                        "state": "Delhi",
+                        "country": "India"
+                    }
+                ]
+            }
+        ],
+        "total_shops": 1
+    }
+}
+</pre>
+
+* ### Single Shop
+ ### API URL : shop/shopApi/get/<shop_id>
+        e.g. : shop/shopApi/get/1
+ @Description : This API helps you to view single category.
+<br>
+@Request Type : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters 
+  * **required_images** : Integer | Optional | (Get Images of Shops. Set value 1.)
+  * **image_type** : Integer | Optional  | (Get images by type.)
+  > **Options :** slider and gallery
+  * **required_facilties** : Integer | Optional | (Get Facilities of shops, Set Value 1.)
+  * **required_offers** : Integer | Optional | (Get Offers of shops. Set Value 1.)
+  * **required_categories** : Integer | Optional | (Get Categories of shops. St Value 1.)
+  * **required_reviews*** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Shop Fetched Successfully.",
+    "res": {
+        "id": "1",
+        "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+        "contact_no": "1234567890",
+        "whatsapp_no": "1234567890",
+        "video_url": "https://www.youtube.com/watch?reload=9&v=3J7vYWFaCoU",
+        "shop_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "timing": "10:30 Am - 07:30 Pm",
+        "home_service": "0",
+        "address": "114B 3rd Floor Sewak Park",
+        "pin_code": "110059",
+        "locality": "Dwarka Mor",
+        "city": "New Delhi",
+        "state_id": "963",
+        "country_id": "864",
+        "latitude": "28.58118100",
+        "longitude": "77.05088800",
+        "status": "1",
+        "is_featured": "0",
+        "add_user": "5",
+        "add_datetime": "2019-10-18 18:55:17",
+        "country": "India",
+        "state": "Delhi",
+        "images": {
+            "gallery": [
+                {
+                    "id": "3",
+                    "shop_id": "1",
+                    "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                    "type": "gallery"
+                },
+                {
+                    "id": "1",
+                    "shop_id": "1",
+                    "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                    "type": "gallery"
+                }
+            ],
+            "slider": [
+                {
+                    "id": "4",
+                    "shop_id": "1",
+                    "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                    "type": "slider"
+                },
+                {
+                    "id": "2",
+                    "shop_id": "1",
+                    "image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                    "type": "slider"
+                }
+            ]
+        },
+        "facilities": [
+            {
+                "id": "4",
+                "shop_id": "1",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+                "id": "3",
+                "shop_id": "1",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+                "id": "2",
+                "shop_id": "1",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            },
+            {
+                "id": "1",
+                "shop_id": "1",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            }
+        ],
+        "reviews": [
+            {
+                "id": "1",
+                "shop_id": "1",
+                "user_id": "5",
+                "rating_stars": "2",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "add_datetime": "2019-10-23 17:36:32",
+                "first_name": "Anup",
+                "last_name": "kumar",
+                "profile_pic": null
+            }
+        ],
+        "categories": [
+            {
+                "cat_name": "Fitness",
+                "id": "2"
+            },
+            {
+                "cat_name": "Education",
+                "id": "1"
+            }
+        ],
+        "offers": [
+            {
+                "id": "1",
+                "offer_title": "Upto 50% off on all tests",
+                "offer_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "shop_id": "1",
+                "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                "contact_no": "1234567890",
+                "whatsapp_no": "1234567890",
+                "locality": "Dwarka Mor",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            }
+        ]
+    }
+}
+</pre>
