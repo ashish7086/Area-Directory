@@ -483,7 +483,7 @@ If required_child = 0
 * ### Single Shop
  ### API URL : shop/shopApi/get/<shop_id>
         e.g. : shop/shopApi/get/1
- @Description : This API helps you to view single category.
+ @Description : This API helps you to view single shop.
 <br>
 @Request Type : Post
 <br>
@@ -496,7 +496,7 @@ If required_child = 0
   * **required_facilties** : Integer | Optional | (Get Facilities of shops, Set Value 1.)
   * **required_offers** : Integer | Optional | (Get Offers of shops. Set Value 1.)
   * **required_categories** : Integer | Optional | (Get Categories of shops. St Value 1.)
-  * **required_reviews*** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
+  * **required_reviews** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
   
 ### **Response**
  * Case : False
