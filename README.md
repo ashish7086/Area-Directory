@@ -7,7 +7,7 @@
 
 @Description : This API helps you to view all the offers.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -80,7 +80,7 @@
         e.g. : offers/offersApi/get/2
  @Description : This API helps you to view single offer.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -121,7 +121,7 @@
 
 @Description : This API helps you to view all the categories.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -250,7 +250,7 @@ If required_child = 0
         e.g. : categories/categoryApi/get/2
  @Description : This API helps you to view single category.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -311,13 +311,15 @@ If required_child = 0
 }
 </pre>
 
+<hr>
+
 ## Get Shops
 * ### Shops List
 ### API URL : shop/shopApi/get
 
 @Description : This API helps you to view all the shops.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -485,7 +487,7 @@ If required_child = 0
         e.g. : shop/shopApi/get/1
  @Description : This API helps you to view single shop.
 <br>
-@Request Type : Post
+@Request Method : Post
 <br>
 @Response Data Type : Json
 <br>
@@ -626,5 +628,47 @@ If required_child = 0
             }
         ]
     }
+}
+</pre>
+
+<hr>
+
+## Shops Rating
+* ### Save Rating
+### API URL : shop/shopApi/saveReviews
+
+@Description : This API helps you to save rating of shop.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **token** : | Required | (For Security and verify user.)
+  * **shop_id** : Integer | Required | (Id of Shop.)
+  * **rating_stars** : Integer | Required | (Rating star of shop by user.)
+  > **Options :** 1,2,3,4 and 5. (
+                  1 - One Star Rating.
+                  2 - Two Star Rating.
+                  3 - Three Star Rating.
+                  4 - Four Star Rating.
+                  5 - Five Star Rating. )
+  * **desc** : String | Required | (Description written by user.)
+  > Maximum 100 Words are allowed.
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Shop rating successfully."
 }
 </pre>
