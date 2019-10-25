@@ -1,6 +1,94 @@
 # Area Directory Mobile Application API Document
 # BASE URL ‑ https://arcbrain.in/mihu/
 
+## Get Location
+* ### Search Location
+### API URL : location/locationApi/searchLocations
+
+@Description : This API helps you to show location suggestions.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **search** : String | Required | (Search string for get related location suggestions.)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "res": [
+        {
+            "location_name": "Rohini, New Delhi, Delhi, India",
+            "place_id": "ChIJPYChRzoBDTkRL16Bd8SM--0"
+        },
+        {
+            "location_name": "Rohini Sector 13, Sector 13, Rohini, Delhi, India",
+            "place_id": "ChIJdV8WCmkBDTkRjQ75C5vx9UI"
+        },
+        {
+            "location_name": "Rohini Sector 8 Road, Sector 8, Rohini, Delhi, India",
+            "place_id": "EjRSb2hpbmkgU2VjdG9yIDggUm9hZCwgU2VjdG9yIDgsIFJvaGluaSwgRGVsaGksIEluZGlhIi4qLAoUChIJ0yHXGuEDDTkRwBpruEgjnMQSFAoSCaPMTVDgAw05EXc2LM2JyhNL"
+        },
+        {
+            "location_name": "Rohini, West Bengal, India",
+            "place_id": "ChIJc7UTAVYSHToRA-RWWRJnwvE"
+        },
+        {
+            "location_name": "Rohini, Jharkhand, India",
+            "place_id": "ChIJPacaIho-8TkRumG25AZZPaM"
+        }
+    ]
+}
+</pre>
+
+* ### Location Details
+### API URL : location/locationApi/getLocationDetails
+
+@Description : This API helps you to show selected location details.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **place_id** : String | Required | (Place id for get related location details.)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "res": {
+        "location": {
+            "lat": 22.1680227,
+            "lng": 87.0998788
+        },
+        "formatted_address": "Rohini, West Bengal, India",
+        "name": "Rohini"
+    }
+}
+</pre>
+<br>
+
 ## Get Offers
 * ### Offers List
 ### API URL : offers/offersApi/get
