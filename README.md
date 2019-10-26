@@ -87,7 +87,92 @@
     }
 }
 </pre>
+<hr>
+
+## My Profile
+* ### Register or Update
+### API URL : user/userApi/
+
+@Description : This API helps you to registration or update details.
 <br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **name** : String | Required | (Name of Customer)
+  * **mobile** : Integer | Required | (Mobile number of Customer)
+  * **email** : String | Optional | (Email id of Customer)
+  * **token** : String | Optional | (Update details)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+* Case : Update Mobile Number
+{
+    "succ": true,
+    "public_msg": "OTP sent on your mobile number for verification.",
+    "res": {
+        "otp_ref": "4",
+        "verify_otp": 1
+    }
+}
+
+* Case : Update Email id
+{
+    "succ": true,
+    "public_msg": "A verification link is send on your email id.",
+    "res": {
+        "verify_email": 1
+    }
+}
+</pre>
+
+* ### Verify OTP
+### API URL : user/userApi/verifyOtp
+@Description : This API helps you to verify OTP.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **otp** : Integer | Required | (OTP for verification)
+  * **otp_ref** : Integer | Required | (OTP Reference number)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Otp verified successfully.",
+    "res": {
+        "id": "336",
+        "name": "Ashish Kumar Pal",
+        "email": "",
+        "mobile": "8802742352",
+        "token": "6c29db1bc03a1c78528a2aa1a34c3c69"
+    }
+}
+</pre>
+
+<hr>
 
 ## Get Offers
 * ### Offers List
