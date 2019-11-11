@@ -538,6 +538,7 @@ If required_child = 0
             {
                 "id": "1",
                 "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                "featured_image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
                 "contact_no": "1234567890",
                 "whatsapp_no": "1234567890",
                 "video_url": "https://www.youtube.com/watch?reload=9&v=3J7vYWFaCoU",
@@ -690,6 +691,7 @@ If required_child = 0
     "res": {
         "id": "1",
         "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+        "featured_image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
         "contact_no": "1234567890",
         "whatsapp_no": "1234567890",
         "video_url": "https://www.youtube.com/watch?reload=9&v=3J7vYWFaCoU",
