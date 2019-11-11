@@ -510,7 +510,7 @@ If required_child = 0
   * **required_facilties** : Integer | Optional | (Get Facilities of shops, Set Value 1.)
   * **required_offers** : Integer | Optional | (Get Offers of shops. Set Value 1.)
   * **required_categories** : Integer | Optional | (Get Categories of shops. St Value 1.)
-  * **required_reviews*** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
+  * **required_reviews** : Integer | Optional | (Get Reviews of shops. Set Value 1.)
   * **required_featured** : Integer | Optional | (Get Featured Shops. Set value 1.)
   * **search_string** : String | Optional | (Get Shops by search.)
   * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
@@ -870,7 +870,7 @@ If required_child = 0
   * **order** : String | Optional | (Offers sort attribute ascending or descending. )
   > **Options :** asc and desc. Default is desc.
   * **orderby** : String | Optional | (Sorting Offers.)
-  > **Options : ** offer_title,add_datetime and id. Default is id.
+  > **Options :** offer_title,add_datetime and id. Default is id.
   * **shop_id** : Integer | Optional | (Get Offers of given shop id.)
   * **shop_ids** : Array | Optional | (Get offers of given shop ids.)
 
