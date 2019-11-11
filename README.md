@@ -870,9 +870,9 @@ If required_child = 0
   * **order** : String | Optional | (Offers sort attribute ascending or descending. )
   > **Options :** asc and desc. Default is desc.
   * **orderby** : String | Optional | (Sorting Offers.)
-  > **Options :** offer_title,add_datetime and id. Default is id.
-  > **shop_id** : Integer | Optional | (Get Offers of given shop id.)
-  > **shop_ids** : Array | Optional | (Get offers of given shop ids.)
+  > **Options : ** offer_title,add_datetime and id. Default is id.
+  * **shop_id** : Integer | Optional | (Get Offers of given shop id.)
+  * **shop_ids** : Array | Optional | (Get offers of given shop ids.)
 
 ### **Response**
  * Case : False
