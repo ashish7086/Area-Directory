@@ -847,3 +847,121 @@ If required_child = 0
     "public_msg": "Shop rating successfully."
 }
 </pre>
+
+<hr>
+
+## Get Star Offers
+* ### Star Offers List
+### API URL : shop/shopApi/getStarOffers/
+
+@Description : This API helps you to view all the star offers.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
+  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **status** : Integer | Optional | (Get Enable Offers or Disable Offers.Default Both)
+  > **Options :** 1 for Enable and 0 for Disable.
+  * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
+  * **order** : String | Optional | (Offers sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting Offers.)
+  > **Options :** offer_title,add_datetime and id. Default is id.
+  > **shop_id** : Integer | Optional | (Get Offers of given shop id.)
+  > **shop_ids** : Array | Optional | (Get offers of given shop ids.)
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "res": {
+        "offers": [
+            {
+                "id": "2",
+                "offer_title": "Upto 50% off on all tests",
+                "offer_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "shop_id": "1",
+                "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                "featured_image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                "contact_no": "1234567890",
+                "whatsapp_no": "1234567890",
+                "locality": "Dwarka Mor",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            },
+            {
+                "id": "1",
+                "offer_title": "Upto 50% off on all tests",
+                "offer_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "shop_id": "1",
+                "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+                "featured_image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+                "contact_no": "1234567890",
+                "whatsapp_no": "1234567890",
+                "locality": "Dwarka Mor",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India"
+            }
+        ],
+        "total_offers": 2
+    },
+    "public_msg": "Star offers get successfully."
+}
+</pre>
+
+* ### Single Star Offer
+ ### API URL : shop/shopApi/getStarOffers/<offer_id>
+        e.g. : shop/shopApi/getStarOffers/2
+ @Description : This API helps you to view single offer.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters : Not Required
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "res": {
+        "id": "2",
+        "offer_title": "Upto 50% off on all tests",
+        "offer_desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "shop_id": "1",
+        "shop_name": "NexGen Innovators It Services Pvt. Ltd.",
+        "featured_image": "https://www.nexgi.com/wp-content/uploads/2019/06/nexgi-contact-us-bg-image.png",
+        "contact_no": "1234567890",
+        "whatsapp_no": "1234567890",
+        "locality": "Dwarka Mor",
+        "city": "New Delhi",
+        "state": "Delhi",
+        "country": "India"
+    },
+    "public_msg": "Star offers get successfully."
+}
+</pre>
