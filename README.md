@@ -518,6 +518,7 @@ If required_child = 0
   > **Options :** asc and desc. Default is desc.
   * **orderby** : String | Optional | (Sorting Offers.)
   > **Options :** shop_name and id. Default is id.
+  * **category_ids** : Array | Optional | (Filter Shops using category ids).
 
 ### **Response**
  * Case : False
