@@ -1079,3 +1079,117 @@ If required_child = 0
     "public_msg": "Token saved successfully."
 }
 </pre>
+* ### Get Notifications
+### API URL : notification/notificationApi/get
+
+@Description : This API helps you to show notification lists..
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **fcm_token** : String | Optional | (Firebase token.)
+  * **token** : String | Optional | (Login user token.)
+  > **Note :** Any one paramter is required **fcm_token** or **token**.
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
+  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
+  * **order** : String | Optional | (Offers sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting Notification.)
+  > **Options :** noti_title ,add_datetime and id. Default is id.
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "notification fetched successfully.",
+    "res": {
+        "notifications": [
+            {
+                "id": "5",
+                "noti_title": "Notification 5",
+                "noti_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "sender_id": "5",
+                "created_at": "2019-11-13 23:24:04",
+                "read": "0",
+                "meta_data": {},
+                "ago_time": "1 h"
+            },
+            {
+                "id": "4",
+                "noti_title": "Notification 4",
+                "noti_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "sender_id": "5",
+                "created_at": "2019-11-13 23:24:04",
+                "read": "0",
+                "meta_data": {
+                    "action": "star_offer_page",
+                    "url": "",
+                    "id": 1
+                },
+                "ago_time": "1 h"
+            },
+            {
+                "id": "3",
+                "noti_title": "Notification 3",
+                "noti_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "sender_id": "5",
+                "created_at": "2019-11-13 23:24:04",
+                "read": "0",
+                "meta_data": {
+                    "action": "shop_page",
+                    "url": "",
+                    "id": 1
+                },
+                "ago_time": "1 h"
+            },
+            {
+                "id": "2",
+                "noti_title": "Notification 2",
+                "noti_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "sender_id": "5",
+                "created_at": "2019-11-13 23:24:04",
+                "read": "0",
+                "meta_data": {
+                    "action": "category_page",
+                    "url": "",
+                    "id": 1
+                },
+                "ago_time": "1 h"
+            },
+            {
+                "id": "1",
+                "noti_title": "Notification 1",
+                "noti_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "sender_id": "5",
+                "created_at": "2019-11-13 23:24:04",
+                "read": "0",
+                "meta_data": {
+                    "action": "external_link",
+                    "url": "https://www.nexgi.com/",
+                    "id": 0
+                },
+                "ago_time": "1 h"
+            }
+        ],
+        "total_notifications": 5
+    }
+}
+</pre>
