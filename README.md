@@ -979,8 +979,8 @@ If required_child = 0
 @Response Data Type : Json
 <br>
 @Parameters
-  * **fcm_token** : String | Required | (Firebase messaging token)
-  * **device_ip** : String | Required | (Devic Ip)
+  * **fcm_token** : String | Required | (Firebase cloud messaging token of device.)
+  * **device_ip** : String | Required | (Current device IP.)
   * **current_latitude** : Float | Required | (Current Location latitude of user.)
   * **current_longitude** : Float | Required | (Current Location longitude of user.)
   * **selected_latitude** : Float | Required | (Selected Location latitude of user.)
