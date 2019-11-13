@@ -966,3 +966,41 @@ If required_child = 0
     "public_msg": "Star offers get successfully."
 }
 </pre>
+<hr>
+
+## Notification
+* ### Save FCM Token
+### API URL : notification/notificationApi/saveFcmToken
+
+@Description : This API helps you to save FCM Token and updtae locations of user.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **fcm_token** : String | Required | (Firebase messaging token)
+  * **device_ip** : String | Required | (Devic Ip)
+  * **current_latitude** : Float | Required | (Current Location latitude of user.)
+  * **current_longitude** : Float | Required | (Current Location longitude of user.)
+  * **selected_latitude** : Float | Required | (Selected Location latitude of user.)
+  * **selected_longitude** : Float | Required | (Selected Location longitude of user.)
+  * **enable_noti** : Integer | Optional | (Manage Enable and disable notification. Default Enable)
+  > **Options :** Send 1 For enable notification , Send 0 form disable notification.
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Token saved successfully."
+}
+</pre>
