@@ -849,6 +849,81 @@ If required_child = 0
 }
 </pre>
 
+* ### Get Shop Reviews
+### API URL : shop/shopApi/getShopReviews
+
+@Description : This API helps you to view all the shops reviews.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **shop_id** : Integer | Required | (Shop id.)
+  * **limit** : Integer | Optional | (Maximum number of items to be returned in result set. Default is 10)
+  * **page** : Integer | Optional | (Current page of the collection. Default is 0)<br>
+  > If you want to get all offers, Then you need to Set **Limit :** 0 and **Page :** 0
+  * **status** : Integer | Optional | (Get enable shop reviews or disable shop reviews. Default Both)
+  > **Options :** 1 for Enable and 0 for Disable.
+  * **rating_stars** : Integer | Optionals | (Rating star of shops by user.)
+  > **Options :** 1,2,3,4 and 5. (
+                  1 - One Star Rating.
+                  2 - Two Star Rating.
+                  3 - Three Star Rating.
+                  4 - Four Star Rating.
+                  5 - Five Star Rating. )
+  * **required_count** : Integer | Optional | (Get total no of results are available according to filters).
+  * **order** : String | Optional | (Offers sort attribute ascending or descending. )
+  > **Options :** asc and desc. Default is desc.
+  * **orderby** : String | Optional | (Sorting Offers.)
+  > **Options :** add_datetime,rating_stars and id. Default is id.
+
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Reviews fetch successfully",
+    "res": {
+        "reviews": [
+            {
+                "id": "5",
+                "shop_id": "2",
+                "user_id": "12",
+                "rating_stars": "5",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "add_datetime": "2019-10-24 16:17:33",
+                "first_name": "Rajapuri",
+                "last_name": "",
+                "profile_pic": null
+            },
+            {
+                "id": "4",
+                "shop_id": "2",
+                "user_id": "5",
+                "rating_stars": "2",
+                "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                "status": "1",
+                "add_datetime": "2019-10-23 17:36:32",
+                "first_name": "Anup",
+                "last_name": "kumar",
+                "profile_pic": null
+            }
+        ],
+        "total_reviews": 2
+    }
+}
+</pre>
+
 <hr>
 
 ## Get Star Offers
