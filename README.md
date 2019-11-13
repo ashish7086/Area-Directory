@@ -1056,10 +1056,10 @@ If required_child = 0
 @Parameters
   * **fcm_token** : String | Required | (Firebase cloud messaging token of device.)
   * **device_ip** : String | Required | (Current device IP.)
-  * **current_latitude** : Float | Required | (Current Location latitude of user.)
-  * **current_longitude** : Float | Required | (Current Location longitude of user.)
-  * **selected_latitude** : Float | Required | (Selected Location latitude of user.)
-  * **selected_longitude** : Float | Required | (Selected Location longitude of user.)
+  * **current_latitude** : Float | Optional | (Current Location latitude of user.)
+  * **current_longitude** : Float | Optional | (Current Location longitude of user.)
+  * **selected_latitude** : Float | Optional | (Selected Location latitude of user.)
+  * **selected_longitude** : Float | Optional | (Selected Location longitude of user.)
   * **enable_noti** : Integer | Optional | (Manage Enable and disable notification. Default Enable)
   > **Options :** Send 1 For enable notification , Send 0 form disable notification.
   
