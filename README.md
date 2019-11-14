@@ -1193,3 +1193,35 @@ If required_child = 0
     }
 }
 </pre>
+
+* ### Mark read notification
+### API URL : notification/notificationApi/markRead
+
+@Description : This API helps you to mark read notification.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **fcm_token** : String | Optional | (Firebase cloud messaging token of device.)
+  * **token** : String | Optional | (Login user token.)
+  > **Note : ** Any one paramter is required **fcm_token** or **token**.
+  * **noti_id** : Integer | Required | (Notification id.)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "Notification mark read successfully."
+}
+</pre>
