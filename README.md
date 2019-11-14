@@ -1206,7 +1206,7 @@ If required_child = 0
 @Parameters
   * **fcm_token** : String | Optional | (Firebase cloud messaging token of device.)
   * **token** : String | Optional | (Login user token.)
-  > **Note : ** Any one paramter is required **fcm_token** or **token**.
+  > **Note :** Any one paramter is required **fcm_token** or **token**.
   * **noti_id** : Integer | Required | (Notification id.)
   
 ### **Response**
