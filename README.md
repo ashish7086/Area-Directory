@@ -115,7 +115,8 @@
 {
     "succ": true,
     "res": {
-        "location": "Karatal District, Kazakhstan"
+        "location": "Karatal District, Kazakhstan",
+        "place_id": "ChIJ-YQY6mx1fEIRh7v__4DTJHM"
     },
     "public_msg": "Fetch location successfully."
 }
