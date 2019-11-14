@@ -87,6 +87,39 @@
     }
 }
 </pre>
+
+* ### Get Location Details By Latitude and Longitude
+### API URL : location/locationApi/getLocByLatLng
+
+@Description : This API helps you to show location using latitude and longitude.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **latitude** : Float | Required | (Current Latitude.)
+  * **longitude** : Float | Required | (Current Longitude.)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "res": {
+        "location": "Karatal District, Kazakhstan"
+    },
+    "public_msg": "Fetch location successfully."
+}
+</pre>
 <hr>
 
 ## My Profile
