@@ -170,6 +170,38 @@
 }
 </pre>
 
+* ### Resend OTP
+### API URL : user/userApi/reSendOtp
+@Description : This API helps you to verify OTP.
+<br>
+@Request Method : Post
+<br>
+@Response Data Type : Json
+<br>
+@Parameters
+  * **mobile** : Integer | Required | (Mobile for verify user and send OTP)
+  
+### **Response**
+ * Case : False
+ <pre>
+ {
+    "succ": false,
+    "public_msg": "Error while Processing."
+}
+</pre>
+
+* Case : True
+<pre>
+{
+    "succ": true,
+    "public_msg": "OTP resend successfully.",
+    "res": {
+        "otp_ref": "4",
+        "verify_otp": 1
+    }
+}
+</pre>
+
 * ### Verify OTP
 ### API URL : user/userApi/verifyOtp
 @Description : This API helps you to verify OTP.
