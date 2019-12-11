@@ -172,7 +172,7 @@
 
 * ### Resend OTP
 ### API URL : user/userApi/reSendOtp
-@Description : This API helps you to verify OTP.
+@Description : This API helps you to resend OTP.
 <br>
 @Request Method : Post
 <br>
