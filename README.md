@@ -137,6 +137,7 @@
   * **name** : String | Required | (Name of Customer)
   * **mobile** : Integer | Required | (Mobile number of Customer)
   * **email** : String | Optional | (Email id of Customer)
+  * **image** : base64 string | Optional | (Image of Customer)
   * **token** : String | Optional | (Update details)
   
 ### **Response**
@@ -233,6 +234,7 @@
         "name": "Ashish Kumar Pal",
         "email": "",
         "mobile": "8802742352",
+        "profile_pic": "https://www.areadirectory.in/uploads/customer/2020/01/1578482826.png",
         "token": "6c29db1bc03a1c78528a2aa1a34c3c69"
     }
 }
